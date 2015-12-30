@@ -1,0 +1,14 @@
+#!/sbin/runscript
+# Minecraft: Laboratory creative-mode flat world
+
+depend() {
+	need minecraft-any
+}
+
+start() {
+	: ;
+}
+
+stop() {
+	: ;
+}

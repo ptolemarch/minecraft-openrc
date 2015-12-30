@@ -1,0 +1,14 @@
+#!/sbin/runscript
+# Minecraft: Butterflies survival-mode (hard) world
+
+depend() {
+	need minecraft-any
+}
+
+start() {
+	: ;
+}
+
+stop() {
+	: ;
+}

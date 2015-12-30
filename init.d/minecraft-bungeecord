@@ -1,0 +1,14 @@
+#!/sbin/runscript
+# Minecraft: BungeeCord multiplexer proxy
+
+depend() {
+	need minecraft-branch minecraft-laboratory minecraft-caterpillars minecraft-butterflies
+}
+
+start() {
+	: ;
+}
+
+stop() {
+	: ;
+}

@@ -1,0 +1,14 @@
+#!/sbin/runscript
+# Minecraft: Branch mini-world
+
+depend() {
+	need minecraft-any
+}
+
+start() {
+	: ;
+}
+
+stop() {
+	: ;
+}

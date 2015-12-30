@@ -1,0 +1,14 @@
+#!/sbin/runscript
+# Minecraft: Caterpillars survival-mode (easy) world
+
+depend() {
+	need minecraft-any
+}
+
+start() {
+	: ;
+}
+
+stop() {
+	: ;
+}

@@ -1,0 +1,14 @@
+#!/sbin/runscript
+# Minecraft: BungeeCord multiplexer proxy
+
+depend() {
+	need minecraft-bungeecord
+}
+
+start() {
+	: ;
+}
+
+stop() {
+	: ;
+}
