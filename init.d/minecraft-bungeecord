@@ -2,14 +2,10 @@
 # Minecraft: BungeeCord multiplexer proxy
 # vim:ft=gentoo-init-d
 
+command='/usr/bin/tmux'
+command_args='-L Minecraft new-window -n BungeeCord /usr/bin/java -Xmx512M -jar /opt/minecraft/BungeeCord.jar'
+start_stop_daemon_args='--user minecraft:minecraft --chdir /srv/minecraft/BungeeCord'
+
 depend() {
 	need minecraft-branch minecraft-laboratory minecraft-caterpillars minecraft-butterflies
-}
-
-start() {
-	: ;
-}
-
-stop() {
-	: ;
 }

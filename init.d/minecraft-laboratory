@@ -2,14 +2,10 @@
 # Minecraft: Laboratory creative-mode flat world
 # vim:ft=gentoo-init-d
 
+command='/usr/bin/tmux'
+command_args='-L Minecraft new-window -n Laboratory /usr/bin/java -Xms512M -Xmx2048M -jar /opt/minecraft/spigot-1.8.8.jar'
+start_stop_daemon_args='--user minecraft:minecraft --chdir /srv/minecraft/Laboratory'
+
 depend() {
 	need minecraft-any
-}
-
-start() {
-	: ;
-}
-
-stop() {
-	: ;
 }
