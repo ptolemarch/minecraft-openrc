@@ -1,6 +1,7 @@
 #!/sbin/runscript
 # Does nothing. Here to be a required dependency of all the Minecraft worlds.
 # So that I can stop them all at once, just by stopping this one.
+# vim:ft=gentoo-init-d
 
 depend() {
 	need net

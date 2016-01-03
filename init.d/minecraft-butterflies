@@ -1,5 +1,6 @@
 #!/sbin/runscript
 # Minecraft: Butterflies survival-mode (hard) world
+# vim:ft=gentoo-init-d
 
 depend() {
 	need minecraft-any
