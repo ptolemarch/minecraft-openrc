@@ -2,10 +2,17 @@
 # Minecraft: Caterpillars survival-mode (easy) world
 # vim:ft=gentoo-init-d
 
-command='/usr/bin/tmux'
-command_args='-L Minecraft new-window -n Caterpillars /usr/bin/java -Xms512M -Xmx2048M -jar /opt/minecraft/spigot-1.8.8.jar'
-start_stop_daemon_args='--user minecraft:minecraft --chdir /srv/minecraft/Caterpillars'
-
 depend() {
 	need minecraft-any
+}
+
+start() {
+	su -c '/usr/bin/tmux -L Minecraft new-window -n Caterpillars -c /srv/minecraft/Caterpillars /usr/bin/java -Xms512M -Xmx2048M -jar /opt/minecraft/spigot-1.8.8.jar' minecraft
+	# TODO: watch logs or output for: Done (N.NNNs)! For help, type "help"
+}
+
+stop() {
+	/usr/bin/tmux -S /tmp/tmux-$MC_UID/Minecraft send-keys -t Minecraft:Caterpillars s t o p Enter
+	# TODO: watch logs or output for successful stop
+	#   timeout: kill tmux window if it's still around
 }

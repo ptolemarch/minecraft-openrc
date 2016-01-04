@@ -3,16 +3,19 @@
 # So that I can stop them all at once, just by stopping this one.
 # vim:ft=gentoo-init-d
 
-command='/usr/bin/tmux'
-command_args='-L Minecraft new-session -d -s Any'
-start_stop_daemon_args='--user minecraft:minecraft --chdir /srv/minecraft'
+MC_UID=`id -u minecraft`
 
 depend() {
 	need net
 	use dns
 }
 
-start_pre() {
+start() {
 	checkpath -m 666 /dev/ptmx
-	return $?
+	su -c '/usr/bin/tmux -L Minecraft new-session -d -s Minecraft -c /srv/minecraft' minecraft
+}
+
+stop() {
+	/usr/bin/tmux -S /tmp/tmux-$MC_UID/Minecraft kill-session -t Minecraft
+	: ;
 }

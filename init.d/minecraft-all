@@ -1,5 +1,6 @@
 #!/sbin/runscript
-# Minecraft: BungeeCord multiplexer proxy
+# Does nothing. Here to depend upon all the Minecraft worlds.
+# So that I can start them all at once, just by starting this one.
 # vim:ft=gentoo-init-d
 
 depend() {
