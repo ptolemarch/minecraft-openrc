@@ -2,6 +2,8 @@
 # Minecraft: Caterpillars survival-mode (easy) world
 # vim:ft=gentoo-init-d
 
+MC_UID=`id -u minecraft`
+
 depend() {
 	need minecraft-any
 }
