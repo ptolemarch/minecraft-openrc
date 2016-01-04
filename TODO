@@ -1,0 +1,4 @@
+- openrc ouptut (ebegin, eend, ...)
+- restart()
+- status()
+- backup() ?
