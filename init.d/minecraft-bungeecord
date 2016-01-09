@@ -5,7 +5,7 @@
 MC_UID=`id -u minecraft`
 
 depend() {
-	need minecraft-branch minecraft-laboratory minecraft-caterpillars minecraft-butterflies
+	need minecraft-branch minecraft-cocoon minecraft-caterpillars minecraft-butterflies
 }
 
 start() {

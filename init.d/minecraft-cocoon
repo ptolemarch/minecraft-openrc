@@ -1,0 +1,20 @@
+#!/sbin/runscript
+# Minecraft: Cocoon creative-mode flat world
+# vim:ft=gentoo-init-d
+
+MC_UID=`id -u minecraft`
+
+depend() {
+	need minecraft-any
+}
+
+start() {
+	su -c '/usr/bin/tmux -L Minecraft new-window -n Cocoon -c /srv/minecraft/Cocoon /usr/bin/java -Xms512M -Xmx2048M -jar /opt/minecraft/spigot-1.8.8.jar' minecraft
+	# TODO: watch logs or output for: Done (N.NNNs)! For help, type "help"
+}
+
+stop() {
+	/usr/bin/tmux -S /tmp/tmux-$MC_UID/Minecraft send-keys -t Minecraft:Cocoon s t o p Enter
+	# TODO: watch logs or output for successful stop
+	#   timeout: kill tmux window if it's still around
+}
